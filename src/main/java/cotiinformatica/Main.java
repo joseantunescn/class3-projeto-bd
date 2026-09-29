@@ -1,5 +1,7 @@
 package cotiinformatica;
 
+import cotiinformatica.services.PessoaService;
+
 import java.lang.classfile.constantpool.InterfaceMethodRefEntry;
 import java.util.Scanner;
 
@@ -16,6 +18,7 @@ public class Main {
         System.out.println("(4) Consultar pessoa");
 
         var scanner = new Scanner(System.in);
+        var pessoaService = new PessoaService();
 
         System.out.println("\nEscolha uma opção: ");
 
@@ -24,7 +27,8 @@ public class Main {
         switch(opcao) {
             case 1:
                 System.out.println("\nCadastro de pessoa\n");
-                break;
+                // var pessoaService = new PessoaService();
+                pessoaService.cadastrarPessoa();
 
             case 2:
                 System.out.println("\nAtualização de pessoa\n");

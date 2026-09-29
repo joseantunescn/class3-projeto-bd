@@ -9,7 +9,7 @@ import java.util.Scanner;
 
 public class PessoaService {
 
-    private void cadastrarPessoa() {
+    public void cadastrarPessoa() {
         var scanner = new Scanner(System.in);
         var pessoa = new Pessoa();
 

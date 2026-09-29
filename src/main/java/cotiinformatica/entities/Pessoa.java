@@ -10,11 +10,11 @@ public class Pessoa {
     private LocalDate dataNascimento;
     private String cpf;
 
-    public UUID getId() {
+    public Integer getId() {
         return id;
     }
 
-    public void setId(UUID id) {
+    public void setId(Integer id) {
         this.id = id;
     }
 
