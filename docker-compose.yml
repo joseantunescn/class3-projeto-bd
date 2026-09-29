@@ -1,0 +1,36 @@
+services:
+  postgresql:
+    image: postgres:16
+    container_name: projeto-db-postgresql
+    environment:
+      POSTGRES_USER: coti
+      POSTGRES_PASSWORD: coti
+      POSTGRES_DB: bd-pessoas
+    ports:
+      - "5434:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    networks:
+      - projeto-db-network
+
+  pgadmin:
+    image: dpage/pgadmin4
+    container_name: projeto-db-pgadmin
+    environment:
+      PGADMIN_DEFAULT_EMAIL: coti@email.com
+      PGADMIN_DEFAULT_PASSWORD: Coti@2026
+    ports:
+      - "5052:80"
+    volumes:
+      - pgadmin_data:/var/lib/pgadmin
+    networks:
+      - projeto-db-network
+    depends_on:
+      - postgresql
+
+volumes:
+  postgres_data:
+  pgadmin_data:
+
+networks:
+  projeto-db-network:
