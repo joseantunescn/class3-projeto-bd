@@ -29,17 +29,21 @@ public class Main {
                 System.out.println("\nCadastro de pessoa\n");
                 // var pessoaService = new PessoaService();
                 pessoaService.cadastrarPessoa();
+                break;
 
             case 2:
                 System.out.println("\nAtualização de pessoa\n");
+                pessoaService.atualizarPessoa();
                 break;
 
             case 3:
                 System.out.println("\nExclusão de pessoa\n");
+                pessoaService.excluirPessoa();
                 break;
 
             case 4:
                 System.out.println("\nConsulta de pessoa\n");
+                pessoaService.consultarPessoa();
                 break;
 
             default:
