@@ -38,7 +38,7 @@ public class PessoaRepository {
 
         try (var connection = connectionFactory.createConnection()) {
 
-            var statement = connection.prepareStatement("select id, nome, cpf, datanascimento from class.pessoas order by id");
+            var statement = connection.prepareStatement("select id, nome, cpf, datanascimento from class3.pessoas order by id");
             var result = statement.executeQuery();
             var lista = new ArrayList<Pessoa>();
 
@@ -64,7 +64,7 @@ public class PessoaRepository {
 
         try (var connection = connectionFactory.createConnection()) {
 
-            var statement = connection.prepareStatement("update class.pessoas set nome=?, datanascimento=?, cpf=? where id=?");
+            var statement = connection.prepareStatement("update class3.pessoas set nome=?, datanascimento=?, cpf=? where id=?");
             statement.setString(1, pessoa.getNome());
             statement.setObject(2, pessoa.getDataNascimento());
             statement.setString(3, pessoa.getCpf());
@@ -79,7 +79,7 @@ public class PessoaRepository {
     public boolean deletePessoa(Integer id) throws Exception{
         try (var connection = connectionFactory.createConnection()) {
 
-            var statement = connection.prepareStatement("delete from class.pessoas where id=?");
+            var statement = connection.prepareStatement("delete from class3.pessoas where id=?");
             statement.setInt(1, id);
             return statement.executeUpdate() > 0;
         }

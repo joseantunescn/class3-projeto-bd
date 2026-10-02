@@ -41,7 +41,7 @@ public class PessoaService {
             System.out.println("Gravado com sucesso!");
 
         } catch (Exception e) {
-            System.out.println("Erro ao gravar!");
+            System.out.println("Erro ao gravar pessoa!");
             System.out.println(e.getMessage());
         }
 
@@ -52,7 +52,7 @@ public class PessoaService {
         var pessoa = new Pessoa();
 
         System.out.println("\nInforme o id da pessoa: ");
-        var id = Integer.parseInt(scanner.nextLine());
+        pessoa.setId(Integer.parseInt(scanner.nextLine()));
 
         System.out.println("\nInforme o nome da pessoa: ");
         pessoa.setNome(scanner.nextLine());
@@ -71,14 +71,14 @@ public class PessoaService {
 
         try {
             if(pessoaRepository.updatePessoa(pessoa)){
-                System.out.printf("Pessoa com id %d atualizada com sucesso!", pessoa.getId());
+                System.out.printf("Pessoa atualizada com sucesso!");
                 }
             else {
-                System.out.println("Pessoa com id " + pessoa.getId() + " não encontrada!");
+                System.out.println("Pessoa não encontrada para atualização!");
             }
 
         } catch (Exception e) {
-            System.out.println("Erro ao gravar!");
+            System.out.println("Erro ao atualizar pessoa!");
             System.out.println(e.getMessage());
         }
 
@@ -100,7 +100,7 @@ public class PessoaService {
             }
 
         } catch (Exception e) {
-            System.out.println("Erro ao gravar!");
+            System.out.println("Erro ao excluir pessoa!");
             System.out.println(e.getMessage());
         }
 
@@ -116,7 +116,7 @@ public class PessoaService {
                 System.out.println("Data Nascimento: " + pessoa.getDataNascimento());
             }
         } catch (Exception e) {
-            System.out.println("Erro ao gravar!");
+            System.out.println("Erro ao consultar pessoa!");
             System.out.println(e.getMessage());
 
         }
